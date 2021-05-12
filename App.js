@@ -10,6 +10,9 @@ export default function App() {
   const [isAddMode, setIsAddMode] = useState(false)
   
   const addGoalHandler = goalTit => {
+    if (goalTit.length === 0) {
+      return;
+    }
     //console.log(goalTit)
     //setCourseGoal([...courseGoals, enteredGoal])
     setCourseGoal(courseGoals => [...courseGoals, {id: Math.random().toString(), value: goalTit}])
